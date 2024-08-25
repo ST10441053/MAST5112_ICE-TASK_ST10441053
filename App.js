@@ -33,9 +33,20 @@ function App (){
     ans = Number(number1) - Number(number2)
     setAnswer(ans);
   }
+  const handlePower = () => {
+    let ans = 0;
+    ans =Number(number1) ** Number(number2) 
+    setAnswer(ans);
+  }
+  const handleSquard = () => {
+    let ans = 0;
+    ans = Math.sqrt(Number(number1) )
+    setAnswer(ans);
+  }
+  
     return(
       <View style={styles.container}>
-             <Text style={styles.heading}>Calculation</Text>
+             <Text style={styles.heading}>Calculator</Text>
         <View style={styles.inputContainer}>
               <TextInput style={styles.input}
                 placeholder="Enter a number"
@@ -86,6 +97,22 @@ function App (){
                 <Text style={styles.divisionButtonText}>/</Text>
                 </TouchableOpacity>
               </View>
+              <View>
+                <TouchableOpacity 
+                style={styles.powerButton}
+                onPress={handlePower}
+                >
+                <Text style={styles.powerButtonText}>**</Text>
+                </TouchableOpacity>
+              </View>
+              <View>
+                <TouchableOpacity 
+                style={styles.squardButton}
+                onPress={handleSquard}
+                >
+                <Text style={styles.squardButtonText}>sqrt</Text>
+                </TouchableOpacity>
+              </View>
           </View>
         <View>
           <View style={styles.answerContainer}>
@@ -118,6 +145,7 @@ const styles = StyleSheet.create({
     paddingEnd:20,
      paddingStart:20,
     flexDirection: 'row',
+    
   },
   input: {
     flex: 1,
@@ -128,14 +156,17 @@ const styles = StyleSheet.create({
     textAlign:'center',
     color:'#723d46',
     borderRadius:20,
+    
   },
   operatoeContainer:{
     flexDirection: 'row', 
     justifyContent: 'space-evenly', 
     marginTop: 10,
+    
   },
   addButton: {
     marginTop:20,
+    marginLeft:2,
     width: 50,
     height: 50,
     backgroundColor: '#219ebc',
@@ -149,6 +180,7 @@ const styles = StyleSheet.create({
   },
   minusButton: {
     marginTop:20,
+    marginLeft: 5,
     width: 50,
     height: 50,
     backgroundColor: '#219ebc',
@@ -162,6 +194,7 @@ const styles = StyleSheet.create({
   },
   multiplicationButton: {
     marginTop:20,
+    marginLeft: 5,
     width: 50,
     height: 50,
     backgroundColor: '#219ebc',
@@ -175,6 +208,7 @@ const styles = StyleSheet.create({
   },
 divisionButton: {
     marginTop:20,
+    marginLeft:5,
     width: 50,
     height: 50,
     backgroundColor: '#219ebc',
@@ -186,9 +220,38 @@ divisionButton: {
     fontSize: 24,
     color: '#023047',
   },
+  powerButton: {
+    marginTop:20,
+    marginLeft:5,
+    width: 50,
+    height: 50,
+    backgroundColor: '#219ebc',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius:50,
+  },
+  powerButtonText: {
+    fontSize: 24,
+    color: '#023047',
+  },
+  squardButton: {
+    marginTop:20,
+    marginLeft: 1,
+    width: 50,
+    height: 50,
+    backgroundColor: '#219ebc',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius:50,
+  },
+  squardButtonText: {
+    fontSize: 15,
+    color: '#023047',
+
+  },
   answerContainer:{
     marginTop:40,
-    width: 90,
+    width: 150,
     height: 50,
     backgroundColor: '#f59099',
     justifyContent: 'center',
