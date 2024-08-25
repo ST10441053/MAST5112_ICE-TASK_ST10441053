@@ -38,7 +38,7 @@ function App (){
     ans =Number(number1) ** Number(number2) 
     setAnswer(ans);
   }
-  const handleSquard = () => {
+  const handleSquare = () => {
     let ans = 0;
     ans = Math.sqrt(Number(number1) )
     setAnswer(ans);
@@ -50,6 +50,7 @@ function App (){
         <View style={styles.inputContainer}>
               <TextInput style={styles.input}
                 placeholder="Enter a number"
+                keyboardType= 'numeric'
                 value={number1}
                 onChangeText={(number1) => setNumber1(number1)}
               />
@@ -57,6 +58,7 @@ function App (){
          <View style={styles.inputContainer}>
               <TextInput style={styles.input}
                 placeholder="Enter a number"
+                keyboardType= 'numeric'
                 value={number2}
                 onChangeText={(number2) => setNumber2(number2)}
               />
@@ -107,10 +109,10 @@ function App (){
               </View>
               <View>
                 <TouchableOpacity 
-                style={styles.squardButton}
-                onPress={handleSquard}
+                style={styles.squareButton}
+                onPress={handleSquare}
                 >
-                <Text style={styles.squardButtonText}>sqrt</Text>
+                <Text style={styles.squareButtonText}>sqrt</Text>
                 </TouchableOpacity>
               </View>
           </View>
@@ -234,7 +236,7 @@ divisionButton: {
     fontSize: 24,
     color: '#023047',
   },
-  squardButton: {
+  squareButton: {
     marginTop:20,
     marginLeft: 1,
     width: 50,
@@ -244,7 +246,7 @@ divisionButton: {
     alignItems: 'center',
     borderRadius:50,
   },
-  squardButtonText: {
+  squareButtonText: {
     fontSize: 15,
     color: '#023047',
 
